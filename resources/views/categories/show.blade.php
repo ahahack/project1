@@ -33,7 +33,7 @@
                         @endforeach
                     </div>
 
-                    <p class="mt-2">{{ $category->article->content }}</p>
+                    <p class="mt-2">{{ substr(strip_tags($category->article->content), 0, 300) }} {{ strlen(strip_tags($category->article->content)) > 300 ? "..." : "" }}</p>
                     <p><a href="/articles/{{ $category->article->id }}">Read more >>></a></p>
                 </div>
             @endforeach
